@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="0.95">
+
+        <TextView
+            android:id="@+id/title"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/issue"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/dark" />
+
+        <TextView
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="10"
+            android:ellipsize="end"
+            android:textColor="@color/dark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/state"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/created_at"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/dark"
+            android:textStyle="italic"
+            android:ellipsize="end"/>
+
+    </LinearLayout>
+
+</LinearLayout>

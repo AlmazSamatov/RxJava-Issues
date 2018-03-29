@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Issues</string>
+    <string name="comments">Comments</string>
+    <string name="labels">Labels</string>
+    <string name="issue">Issue:</string>
+    <string name="no_comments">No comments</string>
+    <string name="no_issues">No issues</string>
+    <string name="no_labels">No labels</string>
+    <string name="name">Name:</string>
+    <string name="comment">Comment:</string>
+    <string name="avatar">avatar</string>
+</resources>

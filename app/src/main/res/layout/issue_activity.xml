@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/titleInIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:textStyle="bold"
+        android:scrollbars = "vertical"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp"
+        android:textColor="@color/dark"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="230dp"
+        android:textSize="15sp"
+        android:textColor="@color/dark"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/titleInIssue"
+        android:layout_toEndOf="@+id/avatar" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/titleInIssue"
+        android:contentDescription="@string/avatar" />
+
+    <TextView
+        android:id="@+id/Issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/avatar"
+        android:textColor="@color/dark"
+        android:textStyle="bold"
+        android:text="@string/issue"/>
+
+    <TextView
+        android:id="@+id/bodyInIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Issue"
+        android:textColor="@color/dark"
+        android:maxLines="11"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/stateInIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/login"
+        android:layout_below="@+id/login"
+        android:layout_toEndOf="@+id/avatar"
+        android:textColor="@color/dark"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/created_atInIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/stateInIssue"
+        android:layout_below="@+id/stateInIssue"
+        android:layout_toEndOf="@+id/avatar"
+        android:textColor="@color/dark"
+        android:textStyle="italic"/>
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/labelsText"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/labels"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/empty_labels"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/no_labels"
+            android:textColor="@color/dark" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/labelsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/bodyInIssue"
+        android:textColor="@color/dark"
+        android:textStyle="bold"
+        android:text="@string/labels" />
+
+    <TextView
+        android:id="@+id/commentsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/dark"
+        android:layout_below="@+id/LinearLayout2"
+        android:textStyle="bold"
+        android:text="@string/comments" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:layout_below="@+id/commentsText"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/swipeComments">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/swipeRefreshLayoutComments"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:id="@+id/comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <TextView
+                android:id="@+id/empty_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/no_comments"
+                android:visibility="gone"
+                android:textColor="@color/dark" />
+
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/CommentsProgressBar"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

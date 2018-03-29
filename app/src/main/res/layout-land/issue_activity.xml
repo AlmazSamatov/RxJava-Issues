@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/titleInIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:scrollbars = "vertical"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp"
+        android:textColor="@color/dark"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleInIssue"
+        android:layout_toEndOf="@+id/avatar"
+        android:textColor="@color/dark"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/login"
+        android:contentDescription="@string/avatar" />
+
+    <TextView
+        android:id="@+id/stateInIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/login"
+        android:layout_below="@+id/login"
+        android:layout_toEndOf="@+id/avatar"
+        android:textColor="@color/dark"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/created_atInIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/stateInIssue"
+        android:layout_below="@+id/stateInIssue"
+        android:layout_toEndOf="@+id/avatar"
+        android:textColor="@color/dark"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/labelsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/login"
+        android:layout_alignBottom="@+id/login"
+        android:layout_toEndOf="@+id/login"
+        android:text="@string/labels"
+        android:textStyle="bold"
+        android:textColor="@color/dark" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/labelsText"
+        android:layout_toEndOf="@+id/labelsText"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/labels"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/empty_labels"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/no_labels"
+            android:textColor="@color/dark" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/namings"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/avatar">
+
+        <TextView
+            android:id="@+id/issueText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/issue"
+            android:textStyle="bold"
+            android:textColor="@color/dark" />
+
+        <TextView
+            android:id="@+id/commentsText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/comments"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/dark" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/namings"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/bodyInIssue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/dark"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/swipeComments">
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/swipeRefreshLayoutComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ListView
+                        android:id="@+id/comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+                <TextView
+                    android:id="@+id/empty_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/no_comments"
+                    android:visibility="gone"
+                    android:textColor="@color/dark" />
+
+            </FrameLayout>
+
+            <ProgressBar
+                android:id="@+id/CommentsProgressBar"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.ProgressBar" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
