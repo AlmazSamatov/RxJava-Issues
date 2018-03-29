@@ -4,6 +4,7 @@ Mobile Android app which shows issues of RxJava repository. Also you can open an
 ## Application description:
 *  Java, Retrofit 2 (To work with network), Gson, Butterknife, Picasso
 *  MVP
+*  You can install it by this link: <link title="issues.apk" href="issues.apk">
  
 ## Screenshots:
 
