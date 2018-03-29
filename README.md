@@ -10,5 +10,5 @@ Mobile Android app which shows issues of RxJava repository. Also you can open an
 <p align="center">
   <img src="/screenshot_1.jpg" width="200"/>
   <img src="/screenshot_2.jpg" width="200"/>
-  <img src="/screenshot_3.jpg" />
+  <img src="/screenshot_3.jpg" widht="400'/>
 </p>
